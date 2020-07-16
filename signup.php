@@ -23,7 +23,7 @@
                 <li class="breadcrumb-item active">Sign Up</li>
             </ol>
             <div class="col-12">
-                <h3>About Us</h3>
+                <h3>Sign Up</h3>
                 <hr>
             </div>
         </div>
