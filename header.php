@@ -11,11 +11,11 @@
                     <li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><span class="fa fa-info fa-lg"></span>About</a></li>
                     <li class="nav-item"><a class="nav-link" href=""><span class="fa fa-list fa-lg"></span>Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>
                 </ul>
                 <span class='navbar-text'>
                     <a id='loginButton'>
-                        <span class="fa fa-sign-in" style="cursor:pointer ">Login</span>
+                        <button class='btn btn-outline'><span class="fa fa-sign-in" style="cursor:pointer ">Login</span></button>
                 </a>
                 </span>
             </div>
