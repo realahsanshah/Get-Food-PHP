@@ -19,7 +19,7 @@
                     </a>
                 </span>
                 <span class='navbar-text'>
-                    <a id='loginButton'>
+                    <a id='signupButton' href='./signup.php'>
                         <button class='btn btn-outline'><span className="fa fa-sign-up fa-lg"></span>Sign Up</button>
                     </a>
                 </span>
