@@ -23,46 +23,28 @@
                 <li class="breadcrumb-item active">Sign Up</li>
             </ol>
             <div class="col-12">
-                <h3>Sign Up</h3>
+                <h3>Login</h3>
                 <hr>
             </div>
         </div>
-        <form>
-            <div class='form-row'>
-                <div class='form-group col-12 col-md-6'>
-                    <label for='name'> Name: </label>
-                    <input name='name' class='form-control' type='text' placeholder='Enter Name'>
+        <div class='row'>
+            <div class='col-12 col-md-4'>
+                <form>
+                        <div class="form-group">
+                            <label for='email'>Email</label>
+                            <input type="email" class="form-control" placeholder="Enter Email" name='email'>
+                        </div>
+                        <div class="form-group">
+                            <label for='password'>Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Password" name='password'>
+                        </div>
+                    <div class='form-row'>
+                        <button type='button' class="btn btn-secondary btn-sm ml-auto">Cancel</button>
+                        <button type='submit' class="btn btn-primary btn-sm ml-1">Login</button>
+                    </div>
+                </form>
                 </div>
             </div>
-
-            <div class='form-row'>
-                <div class='form-group col-12 col-md-6'>
-                    <label for='username'> Username: </label>
-                    <input name='username' class='form-control' type='text' placeholder='Enter Username'>
-                </div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-group col-12 col-md-6'>
-                    <label for='email'> Email: </label>
-                    <input name='email' class='form-control' type='email' placeholder='Enter Email'>
-                </div>
-            </div>
-         
-            <div class='form-row'>
-                <div class='form-group col-12 col-md-6'>
-                    <label for='password'> Password: </label>
-                    <input name='password' class='form-control' type='password' placeholder='Enter Password'>
-                </div>
-            </div>
-
-            <div class='form-row'>
-                <div class='form-group col-12 col-md-6'>
-                    <button class='btn btn-primary ml-auto'>Sign Up</button>    
-                    <button class='btn btn-secondary ml-1'>Cancel</button>    
-                </div>
-            </div>
-        </form>
     </div>
 
     <?php include 'footer.php' ?>
