@@ -1,4 +1,5 @@
 
+
     <footer class="footer">
         <div class="container">
             <div class="row">             
@@ -36,6 +37,4 @@
                 <div class="col-auto">
                     <p>© Copyright 2018 Get Food</p>
                 </div>
-           </div>
-        </div>
-    </footer>
+</div>

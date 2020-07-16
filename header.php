@@ -11,12 +11,17 @@
                     <li class="nav-item active"><a class="nav-link" href="index.html"><span class="fa fa-home fa-lg"></span>Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><span class="fa fa-info fa-lg"></span>About</a></li>
                     <li class="nav-item"><a class="nav-link" href=""><span class="fa fa-list fa-lg"></span>Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>
                 </ul>
                 <span class='navbar-text'>
                     <a id='loginButton'>
-                        <span class="fa fa-sign-in" style="cursor:pointer ">Login</span>
-                </a>
+                        <button class='btn btn-outline'><span class="fa fa-sign-in" style="cursor:pointer ">Login</span></button>
+                    </a>
+                </span>
+                <span class='navbar-text'>
+                    <a id='loginButton'>
+                        <button class='btn btn-outline'><span className="fa fa-sign-up fa-lg"></span>Sign Up</button>
+                    </a>
                 </span>
             </div>
         </div>
@@ -36,20 +41,18 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                        <div class="form-row">
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for='email'>Email</label>
+                        <!-- <div class="form-row"> -->
+                            <div class="form-group">
+                                <label for='email'>Email</label>
                                 <input type="email" class="form-control" placeholder="Enter Email" name='email'>
                             </div>
-                            <div class="form-group col-sm-4">
-                                <label class="sr-only" for='password'>Password</label>
-                                <input type="password" class="form-control mr-1" placeholder="Enter Password" name='password'>
+                        <!-- </div> -->
+                        <!-- <div class='form-row'> -->
+                            <div class="form-group">
+                                <label for='password'>Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password" name='password'>
                             </div>
-                            <div class="form-group col-sm-4 ml-auto">
-                                <input type="checkbox" class="form-check-input ml-auto" name='rememberMe'>
-                                <label class="form-check-label ml-3" for='rememberMe'>Remeber Me</label>
-                            </div>
-                        </div>
+                        <!-- </div> -->
                         <div class='form-row'>
                             <!-- <div class='form-group'> -->
                             <button type='button' class="btn btn-secondary btn-sm ml-auto">Cancel</button>
