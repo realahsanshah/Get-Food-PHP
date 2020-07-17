@@ -27,38 +27,38 @@
                 <hr>
             </div>
         </div>
-        <form>
+        <form action="insert.php" method="POST">
             <div class='form-row'>
                 <div class='form-group col-12 col-md-6'>
                     <label for='name'> Name: </label>
-                    <input name='name' class='form-control' type='text' placeholder='Enter Name'>
+                    <input name='name' class='form-control' type='text' placeholder='Enter Name' required>
                 </div>
             </div>
 
             <div class='form-row'>
                 <div class='form-group col-12 col-md-6'>
                     <label for='username'> Username: </label>
-                    <input name='username' class='form-control' type='text' placeholder='Enter Username'>
+                    <input name='username' class='form-control' type='text' placeholder='Enter Username' required>
                 </div>
             </div>
 
             <div class='form-row'>
                 <div class='form-group col-12 col-md-6'>
                     <label for='email'> Email: </label>
-                    <input name='email' class='form-control' type='email' placeholder='Enter Email'>
+                    <input name='email' class='form-control' type='email' placeholder='Enter Email' required>
                 </div>
             </div>
          
             <div class='form-row'>
                 <div class='form-group col-12 col-md-6'>
                     <label for='password'> Password: </label>
-                    <input name='password' class='form-control' type='password' placeholder='Enter Password'>
+                    <input name='password' class='form-control' type='password' placeholder='Enter Password' required>
                 </div>
             </div>
 
             <div class='form-row'>
                 <div class='form-group col-12 col-md-6'>
-                    <button class='btn btn-primary ml-auto'>Sign Up</button>    
+                    <button class='btn btn-primary ml-auto' type="submit">Sign Up</button>    
                     <button class='btn btn-secondary ml-1'>Cancel</button>    
                 </div>
             </div>
@@ -66,6 +66,7 @@
     </div>
 
     <?php include 'footer.php' ?>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/cjs/popper.min.js" integrity="sha512-BO7V2K9oqbTnqEK9j/RiBzft8mcyj5XsfDgCmc0yymJQcBl4qhuR+TVgPL2pilyEqcMJxc8t0tp/lXGu9I0loA==" crossorigin="anonymous"></script>

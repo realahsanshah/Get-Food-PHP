@@ -29,7 +29,7 @@
         </div>
         <div class='row'>
             <div class='col-12 col-md-4'>
-                <form>
+                <form action="Retreive.php" method="POST">
                         <div class="form-group">
                             <label for='email'>Email</label>
                             <input type="email" class="form-control" placeholder="Enter Email" name='email'>
@@ -40,7 +40,7 @@
                         </div>
                     <div class='form-row'>
                         <button type='button' class="btn btn-secondary btn-sm ml-auto">Cancel</button>
-                        <button type='submit' class="btn btn-primary btn-sm ml-1">Login</button>
+                        <button type="submit" class="btn btn-primary btn-sm ml-1">Login</button>
                     </div>
                 </form>
                 </div>
@@ -48,7 +48,6 @@
     </div>
 
     <?php include 'footer.php' ?>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/cjs/popper.min.js" integrity="sha512-BO7V2K9oqbTnqEK9j/RiBzft8mcyj5XsfDgCmc0yymJQcBl4qhuR+TVgPL2pilyEqcMJxc8t0tp/lXGu9I0loA==" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
