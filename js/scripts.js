@@ -42,7 +42,7 @@ $(document).ready(()=>{
     if(isLoggedIn==='false'){
         $('#cartLink').html('<li class="nav-item"><a class="nav-link" href="index.php"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>')
         $('#loginButton').html("<a href='./login.php'><button id='login' class='buttons btn btn-outline'><span class='fa fa-sign-in' style='cursor:pointer'>Login</span></button></a>");
-        $('#signupButton').html("<a href='./login.php'><button id='signup' class='buttons btn btn-outline'><span className='fa fa-sign-up fa-lg'></span>Sign Up</button></a>");
+        $('#signupButton').html("<a href='./signup.php'><button id='signup' class='buttons btn btn-outline'><span className='fa fa-sign-up fa-lg'></span>Sign Up</button></a>");
     }
     else{
         $('#cartLink').html('<li class="nav-item"><a class="nav-link" href="cart.php"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>')
