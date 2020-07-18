@@ -41,18 +41,13 @@ if($result1->num_rows>0)
     $name=$row['name'];
     $username=$row['username'];
     $email=$row['email'];
+    $userID=$row['id'];
     echo '<script type="text/javascript"> localStorage.setItem("isLoggedIn",true);</script>';
     echo '<script type="text/javascript"> localStorage.setItem("name","'.$name.'");</script>';
     echo '<script type="text/javascript"> localStorage.setItem("email","'.$email.'");</script>';
     echo '<script type="text/javascript"> localStorage.setItem("username","'.$username.'");</script>';
-    // echo 'name:'.$name;
-    // echo 'email:'.$email;
-    // echo 'username:'.$username;
-    // echo "<script type='text/javascript'> 
-    // localStorage.setItem('name',".$name.");
-    // localStorage.setItem('email',".$email.");
-    // localStorage.setItem('username',".$username.");
-    // </script>";
+    echo '<script type="text/javascript"> localStorage.setItem("userId","'.$userID.'");</script>';
+   
     echo '<br><br><br><h1>Login Successfully</h1><br><br><br>';
 }
 else
