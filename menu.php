@@ -66,27 +66,31 @@ if ($result->num_rows > 0) {
 </div>
 
 <script>
-    
+var dish_id=2; 
+var userId;
+var list;
+var qty;
 function add(event){
   // var addToCart=document.getElementById(event.target.id);
-  var dish_id=event.target.id;
-  var userId=window.user.userId;
-  var list=document.getElementById('qty'+dish_id);
-  var qty=list.options[list.selectedIndex].value;
+  dish_id=event.target.id;
+  userId=window.user.userId;
+  list=document.getElementById('qty'+dish_id);
+  qty=list.options[list.selectedIndex].value;
   console.log('dish ID: '+dish_id);
   console.log('User ID: '+userId);
   console.log('Quamtity: '+qty);
 }
 
-
-
 </script>
 ";
+
   }
 } else {
   echo "<h1>No Dish available</h1>";
 }
 
+
+      
     ?>
     
     
