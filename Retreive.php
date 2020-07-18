@@ -36,6 +36,7 @@ $sql= "SELECT * FROM `users` where email='$myemail' and password='$mypassword'" 
 $result1=$conn->query($sql);
 if($result1->num_rows>0)
 {
+    echo '<script type="text/javascript"> localStorage.setItem("isLoggedIn",true);</script>';
     echo '<h1>Login Successfully</h1>';
 }
 else
