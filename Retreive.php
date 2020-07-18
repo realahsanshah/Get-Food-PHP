@@ -46,7 +46,7 @@ if($result1->num_rows>0)
     echo '<script type="text/javascript"> localStorage.setItem("name","'.$name.'");</script>';
     echo '<script type="text/javascript"> localStorage.setItem("email","'.$email.'");</script>';
     echo '<script type="text/javascript"> localStorage.setItem("username","'.$username.'");</script>';
-    echo '<script type="text/javascript"> localStorage.setItem("userId","'.$userID.'");</script>';
+    echo '<script type="text/javascript"> localStorage.setItem("userID","'.$userID.'");</script>';
    
     echo '<br><br><br><h1>Login Successfully</h1><br><br><br>';
 }
@@ -68,5 +68,6 @@ include 'footer.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 
     <script src='./js/scripts.js'></script>
+    <script type='text/javascript' src='./js/cartItems.js'></script> 
 </body>
 </html>

@@ -1,11 +1,15 @@
+// import {dishesInCart} from './cartItems';
+
 console.log('Inside file');
 
-
+// console.log("CART: "+dishesInCart);
+var dishSelected=[];
 
 // localStorage.setItem('isLoggedIn',false);
-
+console.log("Cart: "+dishSelected);
 var isLoggedIn=localStorage.getItem('isLoggedIn');
 window.user={
+    userId:localStorage.getItem('userID'),
     name:localStorage.getItem('name'),
     email:localStorage.getItem('email'),
     username:localStorage.getItem('username')
@@ -14,11 +18,13 @@ window.user={
 // localStorage.setItem('user',JSON.stringify(user));
 if(isLoggedIn===null){
     localStorage.setItem('isLoggedIn',false);
+    localStorage.setItem('userID',"");
     localStorage.setItem('name',"");
     localStorage.setItem('email',"");
     localStorage.setItem('username',"");
     isLoggedIn=localStorage.getItem('isLoggedIn');
     window.user={
+        userId:localStorage.getItem('userID'),
         name:localStorage.getItem('name'),
         email:localStorage.getItem('email'),
         username:localStorage.getItem('username')
@@ -53,8 +59,17 @@ $(document).ready(()=>{
     $('#profileEmail').html("Email: "+window.user.email);
     $('#profileUsername').html("Username: "+window.user.username);
 
-    // $('#addtoCartBtn').click(()=>{
-    //     alert('added');
-    // });
+    $('.addToCart').click((event)=>{
+        // dishesInCart.push({
+        //     dishId:event.target.id,
+        //     userId:window.user.userID
+        // });
+        dishSelected.push({
+            dishId:event.target.id,
+            userId:window.user.userID
+        });
+    })
 });
+
+
 

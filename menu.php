@@ -11,7 +11,12 @@
 
 </head>
 <body>
-    <?php include 'header.php' ?>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/cjs/popper.min.js" integrity="sha512-BO7V2K9oqbTnqEK9j/RiBzft8mcyj5XsfDgCmc0yymJQcBl4qhuR+TVgPL2pilyEqcMJxc8t0tp/lXGu9I0loA==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+
+
+<?php include 'header.php' ?>
     
    
 
@@ -48,18 +53,40 @@ if ($result->num_rows > 0) {
   <div class='card-body'>
     <h5 class='card-title'>".$row['dish_name']."</h5>
     <p class='card-text'>".$row['dish_detail']."</p>
-    <button id=".$row['id']." class='btn btn-primary'>Add to Cart</button>
+    <select class='form-control' id='qty".$row['id']."'>
+      <option value='1'>1</option>
+      <option value='2'>2</option>
+      <option value='3'>3</option>
+      <option value='4'>4</option>
+      <option value='5'>5</option>
+    </select>
+    <button id=".$row['id']." class='addToCart btn btn-primary' onclick='add(event)'>Add to Cart</button>
   </div>
 </div>
-</div>";
+</div>
+
+<script>
+    
+function add(event){
+  // var addToCart=document.getElementById(event.target.id);
+  var dish_id=event.target.id;
+  var userId=window.user.userId;
+  var list=document.getElementById('qty'+dish_id);
+  var qty=list.options[list.selectedIndex].value;
+  console.log('dish ID: '+dish_id);
+  console.log('User ID: '+userId);
+  console.log('Quamtity: '+qty);
+}
+
+
+
+</script>
+";
   }
 } else {
   echo "<h1>No Dish available</h1>";
 }
 
-function($dish_id){
-
-}
     ?>
     
     
@@ -68,10 +95,8 @@ function($dish_id){
 
     <?php include 'footer.php' ?>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/cjs/popper.min.js" integrity="sha512-BO7V2K9oqbTnqEK9j/RiBzft8mcyj5XsfDgCmc0yymJQcBl4qhuR+TVgPL2pilyEqcMJxc8t0tp/lXGu9I0loA==" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-
+   
+  
     <script src='./js/scripts.js'></script>
 </body>
 </html>
