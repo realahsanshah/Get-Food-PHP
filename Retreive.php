@@ -34,14 +34,30 @@ $myemail=$_POST['email'];
 $mypassword=$_POST['password'];
 $sql= "SELECT * FROM `users` where email='$myemail' and password='$mypassword'" ;
 $result1=$conn->query($sql);
+
 if($result1->num_rows>0)
 {
+    $row=$result1->fetch_assoc();
+    $name=$row['name'];
+    $username=$row['username'];
+    $email=$row['email'];
     echo '<script type="text/javascript"> localStorage.setItem("isLoggedIn",true);</script>';
-    echo '<h1>Login Successfully</h1>';
+    echo '<script type="text/javascript"> localStorage.setItem("name","'.$name.'");</script>';
+    echo '<script type="text/javascript"> localStorage.setItem("email","'.$email.'");</script>';
+    echo '<script type="text/javascript"> localStorage.setItem("username","'.$username.'");</script>';
+    // echo 'name:'.$name;
+    // echo 'email:'.$email;
+    // echo 'username:'.$username;
+    // echo "<script type='text/javascript'> 
+    // localStorage.setItem('name',".$name.");
+    // localStorage.setItem('email',".$email.");
+    // localStorage.setItem('username',".$username.");
+    // </script>";
+    echo '<br><br><br><h1>Login Successfully</h1><br><br><br>';
 }
 else
 {
-   echo '<h1>Invalid Email or Password</h1>';
+   echo '<br><br><br><h1>Invalid Email or Password</h1><br><br><br>';
 }
 
 

@@ -14,13 +14,13 @@
                     <li class="nav-item"><a class="nav-link" href="cart.php"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>
               </ul>
 
-                <span class='navbar-text'>
-                    <a id='loginButton' href='./login.php'>
+                <span class='navbar-text'  id='loginButton'>
+                    <a href='./login.php'>
                         
                     </a>
                 </span>
-                <span class='navbar-text'>
-                    <a id='signupButton' href='./signup.php'>
+                <span class='navbar-text'  id='signupButton'>
+                    <a href='./signup.php'>
                         
                     </a>
                 </span>
