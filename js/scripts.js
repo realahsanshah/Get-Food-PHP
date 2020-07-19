@@ -3,7 +3,7 @@
 console.log('Inside file');
 
 // console.log("CART: "+dishesInCart);
-var dishSelected=[];
+window.dishSelected=[];
 
 // localStorage.setItem('isLoggedIn',false);
 console.log("Cart: "+dishSelected);
@@ -59,16 +59,16 @@ $(document).ready(()=>{
     $('#profileEmail').html("Email: "+window.user.email);
     $('#profileUsername').html("Username: "+window.user.username);
 
-    $('.addToCart').click((event)=>{
-        // dishesInCart.push({
-        //     dishId:event.target.id,
-        //     userId:window.user.userID
-        // });
-        dishSelected.push({
-            dishId:event.target.id,
-            userId:window.user.userID
-        });
-    })
+    // $('.addToCart').click((event)=>{
+    //     // dishesInCart.push({
+    //     //     dishId:event.target.id,
+    //     //     userId:window.user.userID
+    //     // });
+    //     dishSelected.push({
+    //         dishId:event.target.id,
+    //         userId:window.user.userID
+    //     });
+    // });
 });
 
 
