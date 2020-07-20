@@ -9,7 +9,7 @@ window.dishSelected=[];
 console.log("Cart: "+dishSelected);
 var isLoggedIn=localStorage.getItem('isLoggedIn');
 window.user={
-    userId:localStorage.getItem('userID'),
+    userId:localStorage.getItem('userId'),
     name:localStorage.getItem('name'),
     email:localStorage.getItem('email'),
     username:localStorage.getItem('username')
@@ -18,13 +18,13 @@ window.user={
 // localStorage.setItem('user',JSON.stringify(user));
 if(isLoggedIn===null){
     localStorage.setItem('isLoggedIn',false);
-    localStorage.setItem('userID',"");
+    localStorage.setItem('userId',"");
     localStorage.setItem('name',"");
     localStorage.setItem('email',"");
     localStorage.setItem('username',"");
     isLoggedIn=localStorage.getItem('isLoggedIn');
     window.user={
-        userId:localStorage.getItem('userID'),
+        userId:localStorage.getItem('userId'),
         name:localStorage.getItem('name'),
         email:localStorage.getItem('email'),
         username:localStorage.getItem('username')

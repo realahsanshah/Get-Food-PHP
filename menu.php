@@ -1,3 +1,43 @@
+<?php 
+  session_start();
+  include 'connect.php';
+
+  if(isset($_POST["add_to_cart"])){
+    
+    // if(isset($_SESSION['cart']))
+    // {
+
+    // }
+    // else
+    // {
+      
+    //   $_SESSION['cart'][0]=$item_array;
+    // }
+
+   
+    $item_array=array(
+      'dishId'=>$_GET['id'],
+      'userId'=>$_POST['userId'],
+      'qty'=>$_POST['qty']
+    );
+
+    $sql="INSERT INTO `cart`(`user_id`, `item_id`, `qty`) 
+          VALUES ('".$item_array['userId']."','".$item_array['dishId']."','".$item_array['qty']."')";
+    if($result = $conn->query($sql)===TRUE){
+      echo "<script>console.log('Added to Cart');</script>";
+    }
+    else{
+      $err=$conn->error;
+      echo "<script>alert('Unsuccessfull because".($err)."');</script>";
+    }
+
+  }
+else{
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,82 +72,37 @@
             </div>
         </div>
     
-      <form method='POST' action='addToCart.php'>
-        <button type='submit' class='btn btn-primary'>Submit Data</button>
-      </form>
-       <div class='row'>
+     
+      <div class='row'>
            
                
     <?php 
-        include 'connect.php';
 
         $sql = "SELECT * FROM dishes";
 
         $result = $conn->query($sql);
-
+  $userId="<script>document.write(userID);</script>";
 if ($result->num_rows > 0) {
   // output data of each row
+  
   while($row = $result->fetch_assoc()) {
     echo "
+    <form class='dishForm' method='POST' action='menu.php?action=add&id=".$row['id']."'>
+      <div class='col-12 col-md-8 m-1'>
+        <div class='card'>
+          <img class='card-img-top' src=".$row['dish_image']." alt='Card image cap' />
+          <div class='card-body'>
+            <h5 class='card-title'>".$row['dish_name']."</h5>
+            <p class='card-text'>".$row['dish_detail']."</p>
+            <input type='number' name='qty' class='form-control col-4' value='1'></input>
+            <button id=".$row['id']." class='addToCart btn btn-primary' name='add_to_cart' type='submit'>Add to Cart</Button>
+            <input type='hidden' id='userId' name='userId' value=''></input>
+
+          </div>
+        </div>
+      </div>
+    </form>
    
-    <div class='col-12 col-md-5 m-1'>
-    <div class='card'>
-  <img class='card-img-top' src=".$row['dish_image']." alt='Card image cap'>
-  <div class='card-body'>
-    <h5 class='card-title'>".$row['dish_name']."</h5>
-    <p class='card-text'>".$row['dish_detail']."</p>
-    <select class='form-control' id='qty".$row['id']."'>
-      <option value='1'>1</option>
-      <option value='2'>2</option>
-      <option value='3'>3</option>
-      <option value='4'>4</option>
-      <option value='5'>5</option>
-    </select>
-    <button id=".$row['id']." class='addToCart btn btn-primary' >Add to Cart</button>
-  </div>
-</div>
-</div>
-
-<script>
-var dish_id; 
-var userId;
-var list;
-var qty;
-window.dishSelected;
-$(document).ready(function(){
-  $('#".$row['id']."').click(function(event){
-    console.log('Inside JQuery'+".$row['id'].");
-    dish_id=".$row['id'].";
-    userId=window.user.userId;
-    list=document.getElementById('qty'+".$row['id'].");
-    qty=list.options[list.selectedIndex].value;
-    console.log('dish ID: '+dish_id);
-    console.log('User ID: '+userId);
-    console.log('Quamtity: '+qty);
-    window.dishSelected.push({
-      dishId:dish_id,
-      userId:userId,
-      qty:qty
-    });
-    console.log(window.dishSelected);
-  });
-});
-
-// $(document).ready(function(){
-//   $('.addToCart').click(function(event){
-// // var addToCart=document.getElementById(event.target.id);
-//   dish_id=event.target.id;
-//   userId=window.user.userId;
-//   list=document.getElementById('qty'+dish_id);
-//   qty=list.options[list.selectedIndex].value;
-//   console.log('dish ID: '+dish_id);
-//   console.log('User ID: '+userId);
-//   console.log('Quamtity: '+qty);
-//   }
-// });
-// }
-
-</script>
 ";
 
   }
@@ -115,18 +110,6 @@ $(document).ready(function(){
   echo "<h1>No Dish available</h1>";
 }
 
-
-// ";
-// echo'  $sql = "INSERT INTO `dishesincart`(`cart_id`, `dish_id`, `dish_quantity`) 
-//     VALUES (1,'.$row["id"].',1)";
-
-//   if ($conn->query($sql) === TRUE) {
-//     echo "<h1>Signed Up Successfully</h1>";
-//   } else {
-//     echo "<h1>Cannot Sign Up</h1>";
-//   }
-// ';
-//   echo "
     ?>
     
     
@@ -135,8 +118,8 @@ $(document).ready(function(){
 
     <?php include 'footer.php' ?>
 
-   
-  
+    
+    
     <script src='./js/scripts.js'></script>
 </body>
 </html>
