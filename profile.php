@@ -34,7 +34,42 @@
                 <h4 id='profileUsername'>Username: </h4>
             </div>
         </div>
+
+        <!-- <div class='row'>
+            <h4>Orders</h4>
+            <?php 
+                  include 'connect.php';
+                  $userId=$_GET['user'];
+                  $sql="SELECT * FROM `cart` INNER JOIN `dishes` 
+                  ON cart.item_id=dishes.id WHERE user_id=$userId AND isDone=1";
+  
+                  $result = $conn->query($sql);
+                  $total=0;
+                  if($result->num_rows>0){
+                      while($row = $result->fetch_assoc()){
+                         echo" 
+                          <div class='col-12 col-md-8 media'>
+                              <img class='mr-3' src=".$row['dish_image']." alt='".$row['dish_name']."' width='64px' height='64px'>
+                              <div class='media-body'>
+                              <h5 class='mt-0'>".$row['dish_name']."</h5>
+                              <h6>Qty:".$row['qty']."<br>Price:".$row['dish_price']."</h6>
+                            </div>
+                          </div>
+                          </div>
+                      
+                          ";
+                          $total+=$row['dish_price'];
+                      }
+                      
+                  }
+                  else{
+                      echo "<h1>No Order Placed Yet</h1>";
+                  }
+            ?>
+        </div> -->
+
     </div>
+
     <?php include 'footer.php' ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>

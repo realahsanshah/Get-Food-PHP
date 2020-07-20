@@ -60,7 +60,6 @@
 
                 $result = $conn->query($sql);
                 $total=0;
-                $count=1;
                 if($result->num_rows>0){
                     while($row = $result->fetch_assoc()){
                        echo" 
@@ -81,7 +80,6 @@
                         </form>
                     
                         ";
-                        $count++;
                         $total+=$row['dish_price'];
                     }
                     echo "
