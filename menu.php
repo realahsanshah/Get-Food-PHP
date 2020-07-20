@@ -4,17 +4,7 @@
 
   if(isset($_POST["add_to_cart"])){
     
-    // if(isset($_SESSION['cart']))
-    // {
 
-    // }
-    // else
-    // {
-      
-    //   $_SESSION['cart'][0]=$item_array;
-    // }
-
-    // echo '<script>alert('.$_POST['userId'].')</script>';
 
     $item_array=array(
       'dishId'=>$_GET['id'],

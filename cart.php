@@ -27,6 +27,8 @@
                 <hr>
             </div>
         </div>
+        <div class='row'>
+        </div>
     </div>
     <?php include 'footer.php' ?>
 
