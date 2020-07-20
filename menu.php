@@ -14,7 +14,8 @@
     //   $_SESSION['cart'][0]=$item_array;
     // }
 
-   
+    // echo '<script>alert('.$_POST['userId'].')</script>';
+
     $item_array=array(
       'dishId'=>$_GET['id'],
       'userId'=>$_POST['userId'],
@@ -96,8 +97,10 @@ if ($result->num_rows > 0) {
             <p class='card-text'>".$row['dish_detail']."</p>
             <input type='number' name='qty' class='form-control col-4' value='1'></input>
             <button id=".$row['id']." class='addToCart btn btn-primary' name='add_to_cart' type='submit'>Add to Cart</Button>
-            <input type='hidden' id='userId' name='userId' value=''></input>
-
+            <input type='hidden' id='userId".$row['id']."' name='userId' value=''></input>
+            <script>              
+              document.getElementById('userId".$row['id']."').value=localStorage.getItem('userID');
+            </script>
           </div>
         </div>
       </div>
@@ -119,7 +122,7 @@ if ($result->num_rows > 0) {
     <?php include 'footer.php' ?>
 
     
-    
+   
     <script src='./js/scripts.js'></script>
 </body>
 </html>
