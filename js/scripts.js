@@ -45,7 +45,7 @@ $(document).ready(()=>{
         $('#signupButton').html("<a href='./signup.php'><button id='signup' class='buttons btn btn-outline'><span className='fa fa-sign-up fa-lg'></span>Sign Up</button></a>");
     }
     else{
-        $('#cartLink').html('<li class="nav-item"><a class="nav-link" href="cart.php"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>')
+        $('#cartLink').html('<li class="nav-item"><a id="cartBtn" class="nav-link"><span class="fa fa-shopping-cart fa-lg"></span>Cart</a></li>')
         $('#loginButton').html("<a href='./profile.php'><button id='profile' class='buttons btn btn-outline'><span class='fa fa-user-o' style='cursor:pointer'>"+window.user.username+"</span></button>");
         $('#signupButton').html("<a href='./index.php'><button id='logout' class='buttons btn btn-outline'><span className='fa fa-sign-out fa-lg'></span>Logout</button></a>");
     }
@@ -54,6 +54,11 @@ $(document).ready(()=>{
         localStorage.setItem('isLoggedIn',false);
         localStorage.setItem('user',{});
     });
+
+    let userId=localStorage.getItem('userID');
+    $('#cartBtn').click(()=>{
+        window.location.href = "http://localhost/projects/get-food-php/cart.php?user="+userId;
+    })
 
     $('#profileName').html("Name: "+window.user.name);
     $('#profileEmail').html("Email: "+window.user.email);

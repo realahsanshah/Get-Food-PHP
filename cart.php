@@ -1,3 +1,28 @@
+<?php 
+    error_reporting(E_ERROR | E_PARSE);
+    include 'connect.php';
+    
+    if (isset($_POST["removeDish"])) {
+        $sql="DELETE FROM `cart` WHERE cart_id=".$_GET['dish']."";
+        if ($conn->query($sql) === true) {
+        }
+        else{
+            
+        }
+    }
+
+    if (isset($_POST["checkout"])) {
+    $sql="UPDATE `cart` SET isDone=1 WHERE user_id='".$_GET['user']."'";
+    if ($conn->query($sql) === TRUE) {
+        // echo "\n\nRecord deleted successfully";
+    } else {
+        // echo "\n\nError deleting record: " . $conn->error;
+    }
+
+    
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,8 +52,54 @@
                 <hr>
             </div>
         </div>
-        <div class='row'>
-        </div>
+            <?php 
+                include 'connect.php';
+                $userId=$_GET['user'];
+                $sql="SELECT * FROM `cart` INNER JOIN `dishes` 
+                ON cart.item_id=dishes.id WHERE user_id=$userId AND isDone=0";
+
+                $result = $conn->query($sql);
+                $total=0;
+                $count=1;
+                if($result->num_rows>0){
+                    while($row = $result->fetch_assoc()){
+                       echo" 
+                       <form class='cartForm' method='POST' action='cart.php?dish=".$row['cart_id']."&user=".$userId."'>
+                       <div class='row'>
+                       
+                        <div class='col-12 col-md-8 media'>
+                            <img class='mr-3' src=".$row['dish_image']." alt='".$row['dish_name']."' width='64px' height='64px'>
+                            <div class='media-body'>
+                            <h5 class='mt-0'>".$row['dish_name']."</h5>
+                            <h6>Qty:".$row['qty']."<br>Price:".$row['dish_price']."</h6>
+                          </div>
+                        </div>
+                        <div class='col-12 col-md-4'>
+                            <button type='submit' id='dish_".$row['cart_id']."' class='btn btn-secondary' name='removeDish'><span class='fa fa-minus'></span></button>
+                        </div>
+                        </div>
+                        </form>
+                    
+                        ";
+                        $count++;
+                        $total+=$row['dish_price'];
+                    }
+                    echo "
+                        <div class='col-8 d-flex justify-content-center'>
+                            <h4>Total to Pay $$total</h4>
+                        </div>
+                        <form class='checkout' method='POST' action='cart.php?user=".$userId."'>
+                            <div class='col-8 d-flex justify-content-center'>
+                                <button id='total' class='btn btn-secondary' type='submit' name='checkout'>Check Out</button>
+                                <br><br>
+                            </div>
+                        </form>
+                    ";
+                }
+                else{
+                    echo "<h1>Cart is empty</h1>";
+                }
+            ?>
     </div>
     <?php include 'footer.php' ?>
 
