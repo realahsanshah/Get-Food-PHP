@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2020 at 03:54 PM
+-- Generation Time: Jul 20, 2020 at 05:49 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -29,11 +29,26 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `id` int(11) NOT NULL,
+  `cart_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
+  `qty` int(10) NOT NULL DEFAULT 1,
   `isDone` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `item_id`, `qty`, `isDone`) VALUES
+(63, 1, 1, 1, 1),
+(64, 1, 2, 1, 1),
+(66, 1, 1, 1, 1),
+(67, 1, 3, 5, 1),
+(68, 2, 4, 4, 0),
+(69, 2, 1, 1, 0),
+(70, 2, 2, 1, 1),
+(72, 1, 1, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -77,6 +92,20 @@ CREATE TABLE `dishesincart` (
   `dish_quantity` tinyint(10) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `dishesincart`
+--
+
+INSERT INTO `dishesincart` (`id`, `cart_id`, `dish_id`, `dish_quantity`) VALUES
+(0, 1, 1, 0),
+(0, 1, 2, 0),
+(0, 1, 3, 0),
+(0, 1, 4, 0),
+(0, 1, 5, 0),
+(0, 1, 6, 0),
+(0, 1, 7, 0),
+(0, 1, 8, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -105,6 +134,16 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `username`, `password`) VALUES
+(1, 'Ahsan Shah', 'shahahsan56@gmail.com', 'realsashah', 'password'),
+(2, 'Usama Abbasi', 'usama@gmail.com', 'usamaabbasi', 'password'),
+(4, 'Badar Rahim', 'badar@gmail.com', ' badar', 'password'),
+(5, 'Muhammad Kamran', 'kamran@gmail.com', 'kami', 'password');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -112,7 +151,7 @@ CREATE TABLE `users` (
 -- Indexes for table `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`,`user_id`,`item_id`);
+  ADD PRIMARY KEY (`cart_id`,`user_id`,`item_id`);
 
 --
 -- Indexes for table `dishes`
@@ -147,7 +186,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `dishes`
@@ -165,7 +204,7 @@ ALTER TABLE `ordertable`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

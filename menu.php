@@ -55,7 +55,7 @@ else{
         <div class="row">
             <ol class="col-12 breadcrumb">
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                <li class="breadcrumb-item active">Cart</li>
+                <li class="breadcrumb-item active">Menu</li>
             </ol>
             <div class="col-12">
                 <h3>Menu</h3>

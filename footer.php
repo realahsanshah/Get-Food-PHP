@@ -6,10 +6,10 @@
                 <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="./about.php">About</a></li>
-                        <li><a href="#">Menu</a></li>
-                        <li><a href="#">Contact</a></li>
+                    <a class="nav-link" href="index.php">Home</a>
+                    <a class="nav-link" href="about.php">About</a>
+                    <a class="nav-link" href="menu.php">Menu</a>
+
                     </ul>
                 </div>
                 <div class="col-7 col-sm-5">
