@@ -35,8 +35,10 @@
             </div>
         </div>
 
-        <!-- <div class='row'>
+        <div class='row'>
             <h4>Orders</h4>
+        </div>
+        <div class='row'>
             <?php 
                   include 'connect.php';
                   $userId=$_GET['user'];
@@ -51,14 +53,13 @@
                           <div class='col-12 col-md-8 media'>
                               <img class='mr-3' src=".$row['dish_image']." alt='".$row['dish_name']."' width='64px' height='64px'>
                               <div class='media-body'>
-                              <h5 class='mt-0'>".$row['dish_name']."</h5>
-                              <h6>Qty:".$row['qty']."<br>Price:".$row['dish_price']."</h6>
-                            </div>
-                          </div>
+                                <h5 class='mt-0'>".$row['dish_name']."</h5>
+                                <h6>Qty:".$row['qty']."<br>Price:".$row['dish_price']."</h6>
+                                <p>".$row['dish_detail']."</p>
+                               </div>
                           </div>
                       
                           ";
-                          $total+=$row['dish_price'];
                       }
                       
                   }
@@ -66,7 +67,7 @@
                       echo "<h1>No Order Placed Yet</h1>";
                   }
             ?>
-        </div> -->
+        </div>
 
     </div>
 
