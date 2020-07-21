@@ -1,0 +1,7 @@
+Assalam Alaikum:
+Our project is an online food restaurant.
+
+To get the project running on your Xampp server, please import the 'getfood.sql' file presents 
+in the 'db file' directory, on the phpmyadmin. This will create a database and 
+put the data in it. Please change the connection setting in 'connect.php', i.e username and password.
+

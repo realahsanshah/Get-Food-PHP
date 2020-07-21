@@ -80,7 +80,7 @@
                         </form>
                     
                         ";
-                        $total+=$row['dish_price'];
+                        $total+=$row['dish_price']*$row['qty'];
                     }
                     echo "
                         <div class='col-8 d-flex justify-content-center'>

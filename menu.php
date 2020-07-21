@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
           <div class='card-body'>
             <h5 class='card-title'>".$row['dish_name']."</h5>
             <p class='card-text'>".$row['dish_detail']."</p>
-            <input type='number' name='qty' class='form-control col-4' value='1'></input>
+            <input id='qty".$row['id']."' type='number' name='qty' class='form-control col-4 qty' value='1' min='1' max='9'></input>
             <button id=".$row['id']." class='addToCart btn btn-primary' name='add_to_cart' type='submit'>Add to Cart</Button>
             <input type='hidden' id='userId".$row['id']."' name='userId' value=''></input>
             <script>              
